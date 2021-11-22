@@ -9,6 +9,6 @@ public class PlaneDrop : MonoBehaviour
 
     public void DropParatrooper()
     {
-        Instantiate(paratrooper, spawnLocation.position, Quaternion.identity);
+        Instantiate(paratrooper, spawnLocation);
     }
 }

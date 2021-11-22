@@ -5,12 +5,14 @@ using UnityEngine;
 public class InstantLaunch : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private float launchSpeed = 25.0f;
 
     void Start()
     {
+        this.gameObject.transform.parent.parent.parent = null;
         if (rb != null)
         {
-            rb.AddForce(new Vector3(0f, 0f, -25f), ForceMode.Impulse);
+            rb.AddRelativeForce(Vector3.forward * -launchSpeed, ForceMode.Impulse);
         }
     }
 }
