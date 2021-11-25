@@ -9,28 +9,31 @@ public class SceneRotation : MonoBehaviour
 
     bool inUse = false;
 
-    void Update()
+    public void rotateX()
     {
         if (!inUse)
         {
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                StartCoroutine(rotateScene(1, 0, 0));
-            }
-            else if (Input.GetKeyDown(KeyCode.Y))
-            {
-                StartCoroutine(rotateScene(0, 1, 0));
-            }
-            else if (Input.GetKeyDown(KeyCode.Z))
-            {
-                StartCoroutine(rotateScene(0, 0, 1));
-            }
-            else { }
+            StartCoroutine(rotateScene(1, 0, 0));
         }
-        
     }
 
-    public IEnumerator rotateScene(int x, int y, int z)
+    public void rotateY()
+    {
+        if (!inUse)
+        {
+            StartCoroutine(rotateScene(0, 1, 0));
+        }
+    }
+
+    public void rotateZ()
+    {
+        if (!inUse)
+        {
+            StartCoroutine(rotateScene(0, 0, 1));
+        }
+    }
+
+    IEnumerator rotateScene(int x, int y, int z)
     {
         if (!inUse)
         {
